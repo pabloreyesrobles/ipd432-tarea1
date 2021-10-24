@@ -12,11 +12,11 @@ module T1_design1
 	// Declarations:------------------------------
 
 	// FSM states type:
-	typedef enum logic [3:0] {S0, S1, S2} state;
-	state state, next_state;
+	typedef enum logic [3:0] {S0, S1, S2} state_type;
+	state_type state, next_state;
 
 	// Statements:--------------------------------
-	logic DELAY_WIDTH = $clog2(N_INCREMENT_DELAY_CONTINUOUS);
+	localparam DELAY_WIDTH = $clog2(N_INCREMENT_DELAY_CONTINUOUS);
 	logic [DELAY_WIDTH-1:0] increment_delay;
 
 	logic pb_status;
@@ -24,7 +24,7 @@ module T1_design1
 	logic pb_press_pulse;
 	logic pb_release_pulse;
 
-	PB_Debouncer_FSM debouncer (
+	PB_Debouncer_FSM #(N_DEBOUNCER_DELAY) debouncer (
 		.clk,
 		.rst								(resetN),
 		.PB									(PushButton),
@@ -53,14 +53,16 @@ module T1_design1
 			S1: begin
 				IncPulse_out = 1'b1;
 				if (pb_status) next_state = S2;
-				else (condition) next_state = S0;
+				else next_state = S0;
 			end
 
 			S2: begin
+				next_state = S2;
 				if ((pb_status && (increment_delay >= N_INCREMENT_DELAY_CONTINUOUS - 1))) begin
 					next_state = S1;
 				end
 				else if (~pb_status) next_state = S0;
+			end
 		endcase
 	end
 

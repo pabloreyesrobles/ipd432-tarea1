@@ -15,7 +15,7 @@ module PB_Debouncer_FSM #(
 	// Double flopping stage for synchronizing asynchronous PB input signal
 	// PB_sync is the synchronized signal
 	always_ff @(posedge clk) begin
-		if (rst) begin
+		if (~rst) begin
 			PB_sync_aux <= 1'b0;
 			PB_sync     <= 1'b0;
 		end
@@ -33,7 +33,7 @@ module PB_Debouncer_FSM #(
  // Timer keeps track of how many cycles the FSM remains in a given state
  // Automatically resets the counter "delay_timer" when changing state
   always_ff @(posedge clk) begin
-		if (rst) delay_timer <= 0;
+		if (~rst) delay_timer <= 0;
 		else if (state != next_state) delay_timer <= 0; //reset the timer when state changes
 		else delay_timer <= delay_timer + 1;
   end
@@ -83,7 +83,7 @@ module PB_Debouncer_FSM #(
 
 	// sequential block for FSM. When clock ticks, update the state
 	always@(posedge clk) begin
-		if(rst) state <= PB_IDLE;
+		if(~rst) state <= PB_IDLE;
 		else state <= next_state;
 	end
     
