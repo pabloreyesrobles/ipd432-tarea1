@@ -7,7 +7,7 @@ module second_gen
   output  logic oversec
 );
 
-always_ff @(clk) begin
+always_ff @(posedge clk) begin
   oversec <= 0;
   
   if (~resetN) seconds <= 0;

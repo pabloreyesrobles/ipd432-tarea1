@@ -6,7 +6,7 @@ module hour_gen
   output  logic [7:0] hours
 );
 
-always_ff @(clk) begin
+always_ff @(posedge clk) begin
   if (~resetN) hours <= 0;
   else begin
     if (hour_flag) begin

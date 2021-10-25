@@ -7,7 +7,7 @@ module minute_gen
   output  logic overmin
 );
 
-always_ff @(clk) begin
+always_ff @(posedge clk) begin
   overmin <= 0;
 
   if (~resetN) minutes <= 0;
