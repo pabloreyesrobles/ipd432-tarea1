@@ -10,7 +10,8 @@ module main
   input   logic SW0,
   input   logic SW1,
   output  logic LED
-
+  output  logic [6:0] cat_out,
+  output  logic [7:0] an_out
 );
 
   logic clk_1hz;
@@ -110,6 +111,14 @@ module main
   bcd hour_to_bcd (
     .data(hours),
     .out(hours_bcd)
+  );
+
+  seven_seg_controller data_to_lcd (
+    .clk,
+    .resetN,
+    .val_in({hours_bcd, minutes_bcd, seconds_bcd, 'hC, day_period}),
+    .cat_out,
+    .an_out
   );
 
 endmodule
