@@ -3,7 +3,7 @@ module seven_seg_controller
   input   logic         clk,
   input   logic         resetN,
   input   logic [31:0]  val_in,
-  output  logic [7:0]   cat_out,
+  output  logic [6:0]   cat_out,
   output  logic [7:0]   an_out
 );
   

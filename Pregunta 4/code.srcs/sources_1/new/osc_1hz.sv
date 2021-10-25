@@ -4,11 +4,12 @@ module osc_1hz
 )
 (
   input		logic clk,
-  input   logic resetN,
-  output	logic clk_1hz
+  input     logic resetN,
+  output    logic clk_1hz
 );
   
-  logic counter;
+  localparam COUNTER_WIDTH = $clog2(CLK_FREQUENCY);
+  logic [COUNTER_WIDTH - 1:0] counter;
 
   always_ff @(clk) begin
     if (~resetN) counter <= 0;

@@ -41,7 +41,7 @@ module main
   always_comb begin
     day_period = 4'hC;
     f_hours = hours;
-    if (SW) begin
+    if (SW0) begin
       day_period = (hours < 12) ? 4'hA : 4'hB;
       f_hours = (hours < 12) ? hours : hours - 12;
     end
@@ -53,7 +53,7 @@ module main
   assign min_flag = btnr_status ? min_pulse_out : oversec;
   assign hour_flag = btnl_status ? hour_pulse_out : overmin;
 
-  osc_1hz osc_1hz (
+  osc_1hz #(CLK_FREQUENCY) osc_1hz (
     .clk,
     .resetN,
     .clk_1hz
