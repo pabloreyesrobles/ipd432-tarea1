@@ -87,7 +87,7 @@ module main
     .hours
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 2) btnr_pulse (
     .clk,
     .resetN,
     .PushButton(BTNR),
@@ -95,7 +95,7 @@ module main
     .pb_status(btnr_status)
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 1) btnl_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 2) btnl_pulse (
     .clk,
     .resetN,
     .PushButton(BTNL),
