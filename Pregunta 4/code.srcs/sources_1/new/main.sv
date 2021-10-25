@@ -57,6 +57,8 @@ module main
   // - else increase with the 1hz clock
   assign min_flag = btnr_status ? min_pulse_out : oversec;
   assign hour_flag = btnl_status ? hour_pulse_out : overmin;
+  
+  assign seg_data = {hours_bcd, minutes_bcd, seconds_bcd, 'hC, day_period};
 
   osc_1hz #(CLK_FREQUENCY) osc_1hz (
     .clk,
@@ -121,7 +123,7 @@ module main
   seven_seg_controller data_to_lcd (
     .clk,
     .resetN,
-    .val_in({hours_bcd, minutes_bcd, seconds_bcd, 'hC, day_period}),
+    .data(seg_data),
     .cat_out,
     .an_out
   );

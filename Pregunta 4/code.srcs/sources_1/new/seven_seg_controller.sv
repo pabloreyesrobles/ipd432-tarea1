@@ -2,7 +2,7 @@ module seven_seg_controller
 (
   input   logic         clk,
   input   logic         resetN,
-  input   logic [31:0]  val_in,
+  input   logic [31:0]  data,
   output  logic [6:0]   cat_out,
   output  logic [7:0]   an_out
 );
@@ -17,15 +17,15 @@ module seven_seg_controller
   
   always_comb begin
     case(segment_state)
-      8'b0000_0001: routed_vals = val_in[3:0];
-      8'b0000_0010: routed_vals = val_in[7:4];
-      8'b0000_0100: routed_vals = val_in[11:8];
-      8'b0000_1000: routed_vals = val_in[15:12];
-      8'b0001_0000: routed_vals = val_in[19:16];
-      8'b0010_0000: routed_vals = val_in[23:20];
-      8'b0100_0000: routed_vals = val_in[27:24];
-      8'b1000_0000: routed_vals = val_in[31:28];
-      default:      routed_vals = val_in[3:0];       
+      8'b0000_0001: routed_vals = data[3:0];
+      8'b0000_0010: routed_vals = data[7:4];
+      8'b0000_0100: routed_vals = data[11:8];
+      8'b0000_1000: routed_vals = data[15:12];
+      8'b0001_0000: routed_vals = data[19:16];
+      8'b0010_0000: routed_vals = data[23:20];
+      8'b0100_0000: routed_vals = data[27:24];
+      8'b1000_0000: routed_vals = data[31:28];
+      default:      routed_vals = data[3:0];       
     endcase
   end
 
