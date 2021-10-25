@@ -9,7 +9,7 @@ module main
   input   logic BTNL,
   input   logic SW0,
   input   logic SW1,
-  output  logic LED
+  output  logic LED,
   output  logic [6:0] cat_out,
   output  logic [7:0] an_out
 );

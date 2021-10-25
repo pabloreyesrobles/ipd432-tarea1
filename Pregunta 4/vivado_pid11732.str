@@ -1,0 +1,287 @@
+/*
+
+Xilinx Vivado v2021.1 (64-bit) [Major: 2021, Minor: 1]
+SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+
+Process ID (PID): 11732
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Oct 25 09:44:34 CLST 2021
+Time zone: 	Chile Standard Time (America/Santiago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.2 64-bit
+Java home: 	C:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2
+Java executable: 	C:/Xilinx/Vivado/2021.1/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Pablo
+User home directory: C:/Users/Pablo
+User working directory: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4
+User country: 	CL
+User language: 	es
+User locale: 	es_CL
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2021.1
+RDI_DATADIR: C:/Xilinx/Vivado/2021.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2021.1/bin
+
+Vivado preferences file: C:/Users/Pablo/AppData/Roaming/Xilinx/Vivado/2021.1/vivado.xml
+Vivado preferences directory: C:/Users/Pablo/AppData/Roaming/Xilinx/Vivado/2021.1/
+Vivado layouts directory: C:/Users/Pablo/AppData/Roaming/Xilinx/Vivado/2021.1/data/layouts
+PlanAhead jar file: 	C:/Xilinx/Vivado/2021.1/lib/classes/planAhead.jar
+Vivado log file: 	E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/vivado.log
+Vivado journal file: 	E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/vivado.jou
+Engine tmp dir: 	E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/.Xil/Vivado-11732-DESKTOP-7MUVEUF
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2021.1/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2021.1
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2021.1
+XILINX_SDK: C:/Xilinx/Vitis/2021.1
+XILINX_VITIS: C:/Xilinx/Vitis/2021.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2021.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2021.1
+
+
+GUI allocated memory:	308 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,186 MB
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: E:\Magisterio\IPD-432\Tarea 1\code\Pregunta 4\code.xpr. Version: Vivado v2021.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project {E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 107 MB (+109770kb) [00:00:12]
+// [Engine Memory]: 1,186 MB (+1092610kb) [00:00:12]
+// [GUI Memory]: 114 MB (+1844kb) [00:00:15]
+// [GUI Memory]: 123 MB (+2971kb) [00:00:16]
+// WARNING: HEventQueue.dispatchEvent() is taking  5958 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,186 MB. GUI used memory: 66 MB. Current time: 10/25/21, 9:44:34 AM CLST
+// Tcl Message: open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:09 . Memory (MB): peak = 1450.363 ; gain = 0.000 
+// Project name: code; location: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4; part: xc7a100tcsg324-1
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 140 MB (+11403kb) [00:00:29]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 161 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1, true); // D - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, bcd.sv]", 5, false); // D
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, bcd.sv]", 2, false); // D
+// [GUI Memory]: 152 MB (+5185kb) [00:03:27]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, bcd.sv]", 2, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1649 ms.
+// Elapsed time: 35 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, main.sv]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, main.sv]", 3, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1438 ms.
+// Elapsed time: 13 seconds
+selectCodeEditor("main.sv", 426, 173); // bP
+selectCodeEditor("main.sv", 415, 177); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("main.sv", 574, 183); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 40 seconds
+selectCodeEditor("main.sv", 413, 175, false, false, false, true, false); // bP - Popup Trigger
+selectCodeEditor("main.sv", 217, 157); // bP
+selectCodeEditor("main.sv", 414, 180); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectCodeEditor("main.sv", 130, 183); // bP
+selectCodeEditor("main.sv", 180, 170); // bP
+selectCodeEditor("main.sv", 158, 175); // bP
+selectCodeEditor("main.sv", 134, 178); // bP
+typeControlKey((HResource) null, "main.sv", 'c'); // bP
+selectCodeEditor("main.sv", 131, 348); // bP
+typeControlKey((HResource) null, "main.sv", 'v'); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "bcd.sv", 1); // m
+selectCodeEditor("bcd.sv", 348, 51); // bP
+selectCodeEditor("bcd.sv", 348, 86); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 32 seconds
+selectCodeEditor("bcd.sv", 576, 260); // bP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, bcd.sv]", 4, false); // D
+selectButton(PAResourceEtoH.FileSetPanel_MESSAGES, "2"); // h
+selectCodeEditor("bcd.sv", 64, 100); // bP
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 203ms to process. Increasing delay to 2000 ms.
+selectCodeEditor("bcd.sv", 229, 55); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Analysis Results, sources_1, [HDL 9-806] Syntax error near ). [E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv:5]. ]", 2, false); // ah
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;E:\Magisterio\IPD-432\Tarea 1\code\Pregunta 4\code.srcs\sources_1\new\bcd.sv;-;;-;16;-;line;-;5;-;;-;16;-;"); // ah
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 27 seconds
+selectCodeEditor("bcd.sv", 862, 17); // bP
+// Elapsed time: 17 seconds
+selectCodeEditor("bcd.sv", 355, 88); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "main.sv", 2); // m
+selectCodeEditor("main.sv", 64, 221); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ak
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // af
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // af
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // af
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // af
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // af
+// HMemoryUtils.trashcanNow. Engine heap size: 1,186 MB. GUI used memory: 92 MB. Current time: 10/25/21, 10:14:35 AM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  1899 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,186 MB. GUI used memory: 92 MB. Current time: 10/25/21, 11:12:25 AM CLST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 4834 seconds
+closeMainWindow("code - [E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.xpr] - Vivado 2021.1"); // cs
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+// A (cs): Exit Vivado: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+// 'aE' command handler elapsed time: 5 seconds
+dismissDialog("Exit Vivado"); // A
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 34 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, main.sv]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, main.sv]", 2, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1301 ms.
+selectCodeEditor("main.sv", 261, 249); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main (main.sv)]", 1); // D
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+setFileChooser("E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv");
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 9 seconds
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Add Sources"); // c
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv}} 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 20 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main (main.sv), btnr_pulse : T1_design1 (T1_design1.sv)]", 6); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main (main.sv), btnr_pulse : T1_design1 (T1_design1.sv)]", 6); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main (main.sv), data_to_lcd : seven_seg_controller (seven_seg_controller.sv)]", 11); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main (main.sv), data_to_lcd : seven_seg_controller (seven_seg_controller.sv)]", 11); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 14); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 15); // D
