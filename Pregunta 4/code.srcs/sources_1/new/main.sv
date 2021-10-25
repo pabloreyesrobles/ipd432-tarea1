@@ -22,6 +22,8 @@ module main
   logic [7:0] seconds_bcd;
   logic [7:0] minutes_bcd;
   logic [7:0] hours_bcd;
+  
+  logic [31:0] seg_data;
 
   logic oversec;
   logic overmin;
@@ -58,7 +60,13 @@ module main
   assign min_flag = btnr_status ? min_pulse_out : oversec;
   assign hour_flag = btnl_status ? hour_pulse_out : overmin;
   
-  assign seg_data = {hours_bcd, minutes_bcd, seconds_bcd, 'hC, day_period};
+  always_comb begin
+    seg_data[31:24] = hours_bcd;
+    seg_data[23:16] = minutes_bcd;
+    seg_data[15:8] = seconds_bcd;
+    seg_data[7:4] = 'hC;
+    seg_data[3:0] = day_period;
+  end 
 
   osc_1hz #(CLK_FREQUENCY) osc_1hz (
     .clk,
@@ -89,7 +97,7 @@ module main
     .hours
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 2) btnr_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
     .clk,
     .resetN,
     .PushButton(BTNR),
@@ -97,7 +105,7 @@ module main
     .pb_status(btnr_status)
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 2) btnl_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 1) btnl_pulse (
     .clk,
     .resetN,
     .PushButton(BTNL),
