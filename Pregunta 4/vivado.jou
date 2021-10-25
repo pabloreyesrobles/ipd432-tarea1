@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Oct 25 09:44:13 2021
+# Process ID: 11732
+# Current directory: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2076 E:\Magisterio\IPD-432\Tarea 1\code\Pregunta 4\code.xpr
+# Log file: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/vivado.log
+# Journal file: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

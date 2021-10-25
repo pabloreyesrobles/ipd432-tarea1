@@ -74,14 +74,14 @@ module main
     .overmin
   );
 
-  minute_gen hour_gen (
+  hour_gen hour_gen (
     .clk,
     .hour_flag,
     .resetN,
     .hours
   );
 
-  T1_design1 #(N_INCREMENT_DELAY_CONTINUOUS = CLK_FREQUENCY >> 1) btnr_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
     .clk,
     .resetN,
     .PushButton(BTNR),
@@ -89,7 +89,7 @@ module main
     .pb_status(btnr_status)
   );
 
-  T1_design1 #(N_INCREMENT_DELAY_CONTINUOUS = CLK_FREQUENCY >> 1) btnl_pulse (
+  T1_design1 #(10, CLK_FREQUENCY >> 1) btnl_pulse (
     .clk,
     .resetN,
     .PushButton(BTNL),
