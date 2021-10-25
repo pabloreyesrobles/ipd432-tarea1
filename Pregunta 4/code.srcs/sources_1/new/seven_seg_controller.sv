@@ -51,8 +51,8 @@ endmodule //seven_seg_controller
 
 module binary_to_seven_seg
 (
-  input   logic val_in,
-  output  logic led_out
+  input   logic [3:0] val_in,
+  output  logic [6:0] led_out
 );
 
   always_comb begin

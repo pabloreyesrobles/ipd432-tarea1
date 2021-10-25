@@ -41,9 +41,14 @@ module main
   always_comb begin
     day_period = 4'hC;
     f_hours = hours;
+    LED = 0;
     if (SW0) begin
-      day_period = (hours < 12) ? 4'hA : 4'hB;
-      f_hours = (hours < 12) ? hours : hours - 12;
+      if (hours < 12) day_period = 4'hA;
+      else begin
+        day_period = 4'hB;
+        f_hours = hours - 12;
+        LED = 1;
+      end
     end
   end
 
