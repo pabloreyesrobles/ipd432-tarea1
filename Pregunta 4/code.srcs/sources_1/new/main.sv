@@ -11,8 +11,8 @@ module main
   input   logic SW1,
   input   logic SW2,
   output  logic LED,
-  output  logic [6:0] cat_out,
-  output  logic [7:0] an_out
+  output  logic [6:0] CAT,
+  output  logic [7:0] AN
 );
 
   logic clk_1hz;
@@ -205,8 +205,8 @@ module main
     .clk,
     .resetN,
     .data(seg_data),
-    .cat_out,
-    .an_out
+    .CAT,
+    .AN
   );
   
   always_ff @(posedge clk) begin
