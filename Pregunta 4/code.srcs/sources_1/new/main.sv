@@ -28,12 +28,12 @@ module main
   logic [31:0] seg_data;
 
   // Alarm variables
-  logic alarm_status = 0; // Initially off
-  logic alarm_ring = 0;
+  logic alarm_status; // Initially off
+  logic alarm_ring;
   logic [3:0] alarm_period;
 
-  logic [7:0] alarm_minutes = 8'd0;
-  logic [7:0] alarm_hours = 8'd7;
+  logic [7:0] alarm_minutes;
+  logic [7:0] alarm_hours;
 
   // Printable variables. Multiplexes for printing
   logic [7:0] p_seconds;
@@ -49,7 +49,7 @@ module main
   logic hour_flag;
 
   logic alarm_min_flag;
-  logic hour_min_flag;
+  logic alarm_hour_flag;
 
   logic min_pulse_out;
   logic btnr_status;
@@ -86,7 +86,10 @@ module main
       // Minutes and hours increase selector: 
       // - if button pressed, minutes increase with T1 pulse generator
       // - else increase with the 1hz clock
-      if (btnr_status) min_flag = min_pulse_out;
+      if (btnr_status) begin 
+        min_flag = min_pulse_out;
+        hour_flag = 0;
+      end
       if (btnl_status) hour_flag = hour_pulse_out;
     end
     
@@ -103,7 +106,7 @@ module main
   assign alarm_ring = (minutes == alarm_minutes) && (hours == alarm_hours);
 
   always_ff @(posedge clk) begin
-    if (overmin) alarm_period = 'd5;
+    if (oversec) alarm_period = 4'd5;
 
     if (alarm_status && alarm_ring && (alarm_period > 0)) begin
       seg_data[31:24] = 'hD;
@@ -112,7 +115,7 @@ module main
       seg_data[7:4] = 'hF;
       seg_data[3:0] = 'hC;
 
-      if (clk_1hz) alarm_period = alarm_period - 1;
+      if (clk_1hz) alarm_period = (alarm_period > 0) ? alarm_period - 1 : 0;
     end
     else begin
       seg_data[31:24] = hours_bcd;
@@ -154,17 +157,17 @@ module main
 
   minute_gen alarm_minute_gen (
     .clk,
-    .min_flag,
+    .min_flag(alarm_min_flag),
     .resetN,
-    .minutes(p_minutes),
+    .minutes(alarm_minutes),
     .overmin(x)
   );
 
   hour_gen alarm_hour_gen (
     .clk,
-    .hour_flag,
+    .hour_flag(alarm_hour_flag),
     .resetN,
-    .hours(p_hours)
+    .hours(alarm_hours)
   );
 
   T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
@@ -205,5 +208,11 @@ module main
     .cat_out,
     .an_out
   );
+  
+  always_ff @(posedge clk) begin
+    if (~resetN) begin
+      alarm_period = 4'd5;
+    end
+  end
 
 endmodule

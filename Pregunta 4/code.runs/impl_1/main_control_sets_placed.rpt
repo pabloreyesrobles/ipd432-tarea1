@@ -1,0 +1,92 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Mon Oct 25 23:56:03 2021
+| Host         : DESKTOP-7MUVEUF running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
+| Design       : main
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    14 |
+|    Minimum number of control sets                        |    14 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    49 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    14 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              15 |            7 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             148 |           48 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              36 |           10 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                   Enable Signal                   |                Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                                   | btnl_pulse/debouncer/delay_timer[3]_i_1_n_0    |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG |                                                   | btnr_pulse/debouncer/delay_timer[3]_i_1__0_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | btnl_pulse/debouncer/FSM_onehot_state_reg[3]_0[0] | hour_gen/hours[4]_i_1__0_n_0                   |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | btnl_pulse/E[0]                                   | btnl_pulse/state_reg[1]_0[0]                   |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | osc_1hz/E[0]                                      | second_gen/seconds[5]_i_1_n_0                  |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG | btnr_pulse/debouncer/E[0]                         | minute_gen/minutes[5]_i_1_n_0                  |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | btnr_pulse/state_reg[1]_1[0]                      | btnr_pulse/state_reg[1]_0[0]                   |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | data_to_lcd/segment_state_1                       | data_to_lcd/SR[0]                              |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG |                                                   | minute_gen/D[2]                                |                5 |             11 |         2.20 |
+|  clk_IBUF_BUFG |                                                   |                                                |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG |                                                   | btnl_pulse/debouncer/state_reg[1]              |                7 |             26 |         3.71 |
+|  clk_IBUF_BUFG |                                                   | btnr_pulse/debouncer/state_reg[1]              |                7 |             26 |         3.71 |
+|  clk_IBUF_BUFG |                                                   | osc_1hz/counter[0]_i_1_n_0                     |                7 |             27 |         3.86 |
+|  clk_IBUF_BUFG |                                                   | data_to_lcd/SR[0]                              |               20 |             50 |         2.50 |
++----------------+---------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+
+

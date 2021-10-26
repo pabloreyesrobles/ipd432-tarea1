@@ -1,17 +1,18 @@
 `timescale 1us / 1us
 
 module alarm_testbench ();
-  logic clk, resetN, BTNR, BTNL, SW0, SW1, LED;
+  logic clk, resetN, BTNR, BTNL, SW0, SW1, SW2, LED;
   logic [6:0] cat_out;
   logic [7:0] an_out;
 
-  main #('d1_000_000) alarm (
+  main #('d1_000) alarm (
     .clk,
     .resetN,
     .BTNR,
     .BTNL,
     .SW0,
     .SW1,
+    .SW2,
     .LED,
     .cat_out,
     .an_out
@@ -27,10 +28,11 @@ module alarm_testbench ();
     BTNR = 1'b0;
     SW0 = 1'b0;
     SW1 = 1'b0;
+    SW2 = 1'b0;
     
     #60 resetN = 1'b0;
     #40 resetN = 1'b1;
-    #50 BTNR = 1'b1;    
+    #50 BTNR = 1'b1;
   end
 
 endmodule
