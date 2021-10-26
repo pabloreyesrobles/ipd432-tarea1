@@ -70,7 +70,9 @@ module binary_to_seven_seg
       'hA:  led_out = 7'b0001000; // A
       'hB:  led_out = 7'b0001100; // P
       'hC:  led_out = 7'b1111111;
-
+      'hD:  led_out = 7'b0001001; // H
+      'hE:  led_out = 7'b1000111; // L
+      'hF:  led_out = 7'b0001000; // A
       default: led_out = 7'b0000000; // U
     endcase    
   end

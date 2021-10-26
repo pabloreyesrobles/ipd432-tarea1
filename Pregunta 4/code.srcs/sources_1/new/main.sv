@@ -9,6 +9,7 @@ module main
   input   logic BTNL,
   input   logic SW0,
   input   logic SW1,
+  input   logic SW2,
   output  logic LED,
   output  logic [6:0] cat_out,
   output  logic [7:0] an_out
@@ -19,11 +20,27 @@ module main
   logic [7:0] seconds;
   logic [7:0] minutes;
   logic [7:0] hours;
+
   logic [7:0] seconds_bcd;
   logic [7:0] minutes_bcd;
   logic [7:0] hours_bcd;
   
   logic [31:0] seg_data;
+
+  // Alarm variables
+  logic alarm_status = 0; // Initially off
+  logic alarm_ring = 0;
+  logic [3:0] alarm_period;
+
+  logic [7:0] alarm_minutes = 8'd0;
+  logic [7:0] alarm_hours = 8'd7;
+
+  // Printable variables. Multiplexes for printing
+  logic [7:0] p_seconds;
+  logic [7:0] p_minutes;
+  logic [7:0] p_hours;
+
+  logic [3:0] day_period;
 
   logic oversec;
   logic overmin;
@@ -31,42 +48,80 @@ module main
   logic min_flag;
   logic hour_flag;
 
+  logic alarm_min_flag;
+  logic hour_min_flag;
+
   logic min_pulse_out;
   logic btnr_status;
   logic hour_pulse_out;
   logic btnl_status;
-
-  logic [7:0] f_hours;
-  logic [3:0] day_period;
-
-  // Hour formatter
-  always_comb begin
-    day_period = 4'hC;
-    f_hours = hours;
-    LED = 0;
-    if (SW0) begin
-      if (hours < 12) day_period = 4'hA;
-      else begin
-        day_period = 4'hB;
-        f_hours = hours - 12;
-        LED = 1;
-      end
-    end
-  end
-
-  // Minutes and hours increase selector: 
-  // - if button pressed, minutes increase with T1 pulse generator
-  // - else increase with the 1hz clock
-  assign min_flag = btnr_status ? min_pulse_out : oversec;
-  assign hour_flag = btnl_status ? hour_pulse_out : overmin;
   
   always_comb begin
-    seg_data[31:24] = hours_bcd;
-    seg_data[23:16] = minutes_bcd;
-    seg_data[15:8] = seconds_bcd;
-    seg_data[7:4] = 'hC;
-    seg_data[3:0] = day_period;
-  end 
+    min_flag = oversec;
+    hour_flag = overmin;
+
+    alarm_min_flag = 0;
+    alarm_hour_flag = 0;
+
+    day_period = 4'hC;
+    LED = 0;
+
+    if (SW1) begin
+      alarm_status = 0;
+
+      p_seconds = 8'd0;
+      p_minutes = alarm_minutes;
+      p_hours = alarm_hours;
+
+      alarm_min_flag = min_pulse_out;
+      alarm_hour_flag = hour_pulse_out;
+    end
+    else begin
+      alarm_status = SW2;
+
+      p_seconds = seconds;
+      p_minutes = minutes;
+      p_hours = hours;
+
+      // Minutes and hours increase selector: 
+      // - if button pressed, minutes increase with T1 pulse generator
+      // - else increase with the 1hz clock
+      if (btnr_status) min_flag = min_pulse_out;
+      if (btnl_status) hour_flag = hour_pulse_out;
+    end
+    
+    if (SW0) begin
+      day_period = 4'hA;
+      if (p_hours >= 12) begin
+        p_hours = p_hours - 12;
+        day_period = 4'hB;
+        LED = 1;
+      end        
+    end
+  end
+  
+  assign alarm_ring = (minutes == alarm_minutes) && (hours == alarm_hours);
+
+  always_ff @(posedge clk) begin
+    if (overmin) alarm_period = 'd5;
+
+    if (alarm_status && alarm_ring && (alarm_period > 0)) begin
+      seg_data[31:24] = 'hD;
+      seg_data[23:16] = 4'd0;
+      seg_data[15:8] = 'hE;
+      seg_data[7:4] = 'hF;
+      seg_data[3:0] = 'hC;
+
+      if (clk_1hz) alarm_period = alarm_period - 1;
+    end
+    else begin
+      seg_data[31:24] = hours_bcd;
+      seg_data[23:16] = minutes_bcd;
+      seg_data[15:8] = seconds_bcd;
+      seg_data[7:4] = 'hC;
+      seg_data[3:0] = day_period;
+    end
+  end
 
   osc_1hz #(CLK_FREQUENCY) osc_1hz (
     .clk,
@@ -97,6 +152,21 @@ module main
     .hours
   );
 
+  minute_gen alarm_minute_gen (
+    .clk,
+    .min_flag,
+    .resetN,
+    .minutes(p_minutes),
+    .overmin(x)
+  );
+
+  hour_gen alarm_hour_gen (
+    .clk,
+    .hour_flag,
+    .resetN,
+    .hours(p_hours)
+  );
+
   T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
     .clk,
     .resetN,
@@ -114,17 +184,17 @@ module main
   );
 
   bcd sec_to_bcd (
-    .data(seconds),
+    .data(p_seconds),
     .out(seconds_bcd)
   );
 
   bcd min_to_bcd (
-    .data(minutes),
+    .data(p_minutes),
     .out(minutes_bcd)
   );
 
   bcd hour_to_bcd (
-    .data(hours),
+    .data(p_hours),
     .out(hours_bcd)
   );
 
