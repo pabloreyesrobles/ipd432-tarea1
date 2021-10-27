@@ -3,13 +3,13 @@
 Jun 10 2021
 20:04:57
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.sim/sim_1/behav/xsim/glbl.v,1635165340,verilog,,,,glbl,,uvm,,,,,,
-E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sim_1/new/alarm_testbenck.sv,1635216190,systemVerilog,,,,alarm_testbench,,uvm,,,,,,
+E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sim_1/new/alarm_testbenck.sv,1635303708,systemVerilog,,,,alarm_testbench,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv,1635165340,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv,,T1_design1,,uvm,,,,,,
-E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv,1635166323,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv,,bcd,,uvm,,,,,,
+E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv,1635301076,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv,,bcd,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv,1635165340,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv,,PB_Debouncer_FSM,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv,1635181498,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/main.sv,,hour_gen,,uvm,,,,,,
-E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/main.sv,1635216778,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/minute_gen.sv,,main,,uvm,,,,,,
+E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/main.sv,1635304142,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/minute_gen.sv,,main,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/minute_gen.sv,1635181498,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/osc_1hz.sv,,minute_gen,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/osc_1hz.sv,1635181498,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/second_gen.sv,,osc_1hz,,uvm,,,,,,
 E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/second_gen.sv,1635181498,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv,,second_gen,,uvm,,,,,,
-E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv,1635213138,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sim_1/new/alarm_testbenck.sv,,binary_to_seven_seg;seven_seg_controller,,uvm,,,,,,
+E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv,1635297630,systemVerilog,,E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sim_1/new/alarm_testbenck.sv,,binary_to_seven_seg;seven_seg_controller,,uvm,,,,,,

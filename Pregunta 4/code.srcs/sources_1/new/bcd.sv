@@ -5,7 +5,7 @@ module bcd
 );
 
   integer i;
-  logic [4:0] tens, ones;
+  logic [3:0] tens, ones;
 
   always_comb begin
     tens = 4'd0;

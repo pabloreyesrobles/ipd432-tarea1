@@ -10,7 +10,7 @@ always_ff @(posedge clk) begin
   if (~resetN) hours <= 0;
   else begin
     if (hour_flag) begin
-      if (hours < 24) hours <= hours + 1;
+      if (hours < 23) hours <= hours + 1;
       else begin
         hours <= 0;
       end

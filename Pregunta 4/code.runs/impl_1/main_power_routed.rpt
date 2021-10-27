@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Tue Oct 26 22:24:21 2021
+| Date             : Wed Oct 27 01:13:22 2021
 | Host             : DESKTOP-7MUVEUF running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.107        |
+| Total On-Chip Power (W)  | 0.108        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.010        |
+| Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      477 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      186 |     63400 |            0.29 |
-|   Register     |    <0.001 |      199 |    126800 |            0.16 |
+| Slice Logic    |    <0.001 |      504 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      187 |     63400 |            0.29 |
+|   Register     |    <0.001 |      213 |    126800 |            0.17 |
 |   CARRY4       |    <0.001 |       29 |     15850 |            0.18 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      394 |       --- |             --- |
-| I/O            |     0.007 |       23 |       210 |           10.95 |
+| Signals        |    <0.001 |      413 |       --- |             --- |
+| I/O            |     0.008 |       24 |       210 |           11.43 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.107 |          |           |                 |
+| Total          |     0.108 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -140,7 +140,7 @@ Table of Contents
 +------+-----------+
 | Name | Power (W) |
 +------+-----------+
-| main |     0.010 |
+| main |     0.011 |
 +------+-----------+
 
 

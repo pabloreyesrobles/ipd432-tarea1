@@ -10,7 +10,8 @@ module main
   input   logic SW0,
   input   logic SW1,
   input   logic SW2,
-  output  logic LED,
+  output  logic LED0,
+  output  logic LED1,
   output  logic [6:0] CAT,
   output  logic [7:0] AN
 );
@@ -64,7 +65,8 @@ module main
     alarm_hour_flag = 0;
 
     day_period = 4'hC;
-    LED = 0;
+    LED0 = 0;
+    LED1 = alarm_status;
 
     if (SW1) begin
       alarm_status = 0;
@@ -98,22 +100,23 @@ module main
       if (p_hours >= 12) begin
         p_hours = p_hours - 12;
         day_period = 4'hB;
-        LED = 1;
+        LED0 = 1;
       end        
     end
   end
   
-  assign alarm_ring = (minutes == alarm_minutes) && (hours == alarm_hours);
+  assign alarm_ring = alarm_status  && (alarm_period > 0)
+                   && (minutes == alarm_minutes) && (hours == alarm_hours);
 
   always_ff @(posedge clk) begin
     if (oversec) alarm_period = 4'd5;
 
-    if (alarm_status && alarm_ring && (alarm_period > 0)) begin
-      seg_data[31:24] = 'hD;
-      seg_data[23:16] = 4'd0;
-      seg_data[15:8] = 'hE;
-      seg_data[7:4] = 'hF;
-      seg_data[3:0] = 'hC;
+    if (alarm_ring) begin
+      seg_data[31:28] = 'hD;
+      seg_data[27:24] = 4'd0;
+      seg_data[24:20] = 'hE;
+      seg_data[19:16] = 'hF;
+      seg_data[15:0] = 'hCCCC;
 
       if (clk_1hz) alarm_period = (alarm_period > 0) ? alarm_period - 1 : 0;
     end
@@ -170,7 +173,7 @@ module main
     .hours(alarm_hours)
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 1) btnr_pulse (
+  T1_design1 #(CLK_FREQUENCY >> 16, CLK_FREQUENCY >> 1) btnr_pulse (
     .clk,
     .resetN,
     .PushButton(BTNR),
@@ -178,7 +181,7 @@ module main
     .pb_status(btnr_status)
   );
 
-  T1_design1 #(10, CLK_FREQUENCY >> 1) btnl_pulse (
+  T1_design1 #(CLK_FREQUENCY >> 16, CLK_FREQUENCY >> 1) btnl_pulse (
     .clk,
     .resetN,
     .PushButton(BTNL),
