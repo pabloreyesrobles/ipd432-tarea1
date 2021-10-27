@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Mon Oct 25 23:54:40 2021
-# Process ID: 11732
+# Start of session at: Tue Oct 26 22:21:20 2021
+# Process ID: 14252
 # Current directory: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file: E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.runs/synth_1/main.vds

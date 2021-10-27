@@ -12,7 +12,7 @@ module seven_seg_controller
   logic [3:0]   routed_vals;
   logic [6:0]   led_out;
   
-  assign cat_out = ~led_out;
+  // assign cat_out = ~led_out;
   assign an_out = ~segment_state;
   
   always_comb begin
@@ -29,7 +29,7 @@ module seven_seg_controller
     endcase
   end
 
-  binary_to_seven_seg my_converter (.val_in(routed_vals), .led_out(led_out));
+  binary_to_seven_seg my_converter (.val_in(routed_vals), .led_out(cat_out));
   
   always_ff @(posedge clk)begin
     if (~resetN) begin

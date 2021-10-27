@@ -205,8 +205,8 @@ module main
     .clk,
     .resetN,
     .data(seg_data),
-    .CAT,
-    .AN
+    .cat_out(CAT),
+    .an_out(AN)
   );
   
   always_ff @(posedge clk) begin
