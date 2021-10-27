@@ -29,17 +29,13 @@ module alarm_testbench ();
     resetN = 1'b1;
     BTNL = 1'b0;
     BTNR = 1'b0;
-    SW0 = 1'b0;
+    SW0 = 1'b1;
     SW1 = 1'b0;
     SW2 = 1'b0;
     
     #60 resetN = 1'b0;
     #40 resetN = 1'b1;
-    #50 SW1 = 1'b1;
-    #50 BTNR = 1'b1;
-    #50 BTNR = 1'b0;
-    #50 SW1 = 1'b0;
-    SW2 = 1'b1;
+    #50 BTNL = 1'b1;
   end
 
 endmodule

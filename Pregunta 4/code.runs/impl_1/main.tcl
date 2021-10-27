@@ -127,8 +127,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/Pablo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8728-DESKTOP-7MUVEUF/incrSyn
-  set_param xicom.use_bs_reader 1
+  set_param synth.incrementalSynthesisCache C:/Users/Pablo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-16368-DESKTOP-7MUVEUF/incrSyn
   open_checkpoint main_routed.dcp
   set_property webtalk.parent_dir {E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.cache/wt} [current_project]
 set_property TOP main [current_fileset]

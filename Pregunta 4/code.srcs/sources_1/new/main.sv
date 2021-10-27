@@ -57,6 +57,8 @@ module main
   logic hour_pulse_out;
   logic btnl_status;
   
+  localparam DELAY_DEBOUNCER = (CLK_FREQUENCY >> 10) < 10 ? 10 : CLK_FREQUENCY >> 10;
+  
   always_comb begin
     min_flag = oversec;
     hour_flag = overmin;
@@ -66,7 +68,6 @@ module main
 
     day_period = 4'hC;
     LED0 = 0;
-    LED1 = alarm_status;
 
     if (SW1) begin
       alarm_status = 0;
@@ -79,7 +80,7 @@ module main
       alarm_hour_flag = hour_pulse_out;
     end
     else begin
-      alarm_status = SW2;
+      alarm_status = SW2 && (alarm_period > 0);
 
       p_seconds = seconds;
       p_minutes = minutes;
@@ -97,35 +98,44 @@ module main
     
     if (SW0) begin
       day_period = 4'hA;
-      if (p_hours >= 12) begin
+      if (p_hours > 12) begin
         p_hours = p_hours - 12;
         day_period = 4'hB;
         LED0 = 1;
-      end        
+      end
+      else if (hours == 12) begin
+        day_period = 4'hB;
+        LED0 = 1;
+      end
+      else if (hours == 0) begin
+        p_hours = 12;
+      end   
     end
   end
-  
-  assign alarm_ring = alarm_status  && (alarm_period > 0)
-                   && (minutes == alarm_minutes) && (hours == alarm_hours);
+
 
   always_ff @(posedge clk) begin
-    if (oversec) alarm_period = 4'd5;
+    if (oversec) alarm_period <= 4'd5;
+    alarm_ring <= (minutes == alarm_minutes) && (hours == alarm_hours) && (seconds < 'd5);
+    
+    seg_data[31:24] <= hours_bcd;
+    seg_data[23:16] <= minutes_bcd;
+    seg_data[15:8] <= seconds_bcd;
+    seg_data[7:4] <= 'hC;
+    seg_data[3:0] <= day_period;
+    
+    LED1 <= 0;
+      
+    if (alarm_ring && alarm_status) begin
+      seg_data[31:28] <= 'hD;
+      seg_data[27:24] <= 4'd0;
+      seg_data[24:20] <= 'hE;
+      seg_data[19:16] <= 'hF;
+      seg_data[15:0] <= 'hCCCC;
+      
+      LED1 <= 1;
 
-    if (alarm_ring) begin
-      seg_data[31:28] = 'hD;
-      seg_data[27:24] = 4'd0;
-      seg_data[24:20] = 'hE;
-      seg_data[19:16] = 'hF;
-      seg_data[15:0] = 'hCCCC;
-
-      if (clk_1hz) alarm_period = (alarm_period > 0) ? alarm_period - 1 : 0;
-    end
-    else begin
-      seg_data[31:24] = hours_bcd;
-      seg_data[23:16] = minutes_bcd;
-      seg_data[15:8] = seconds_bcd;
-      seg_data[7:4] = 'hC;
-      seg_data[3:0] = day_period;
+      if (clk_1hz) alarm_period <= (alarm_period > 0) ? alarm_period - 1 : 0;
     end
   end
 
@@ -173,7 +183,7 @@ module main
     .hours(alarm_hours)
   );
 
-  T1_design1 #(CLK_FREQUENCY >> 16, CLK_FREQUENCY >> 1) btnr_pulse (
+  T1_design1 #(DELAY_DEBOUNCER, CLK_FREQUENCY >> 1) btnr_pulse (
     .clk,
     .resetN,
     .PushButton(BTNR),
@@ -181,7 +191,7 @@ module main
     .pb_status(btnr_status)
   );
 
-  T1_design1 #(CLK_FREQUENCY >> 16, CLK_FREQUENCY >> 1) btnl_pulse (
+  T1_design1 #(DELAY_DEBOUNCER, CLK_FREQUENCY >> 1) btnl_pulse (
     .clk,
     .resetN,
     .PushButton(BTNL),
@@ -204,7 +214,7 @@ module main
     .out(hours_bcd)
   );
 
-  seven_seg_controller data_to_lcd (
+  seven_seg_controller #(CLK_FREQUENCY) data_to_lcd (
     .clk,
     .resetN,
     .data(seg_data),
@@ -214,7 +224,7 @@ module main
   
   always_ff @(posedge clk) begin
     if (~resetN) begin
-      alarm_period = 4'd5;
+      alarm_period <= 4'd5;
     end
   end
 

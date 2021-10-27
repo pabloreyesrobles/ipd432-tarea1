@@ -13,15 +13,15 @@ WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv" Line 1. Module hour_gen doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/minute_gen.sv" Line 1. Module minute_gen doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv" Line 1. Module hour_gen doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_DEBOUNCER_DELAY=32'b01010,N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=32'b01010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_DEBOUNCER_DELAY=32'b01010,N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=32'b01010) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 1. Module seven_seg_controller doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 52. Module binary_to_seven_seg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 1. Module seven_seg_controller(CLK_FREQUENCY=32'b01111101000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 57. Module binary_to_seven_seg doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/main.sv" Line 1. Module main(CLK_FREQUENCY=32'b01111101000) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/osc_1hz.sv" Line 1. Module osc_1hz(CLK_FREQUENCY=32'b01111101000) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/second_gen.sv" Line 1. Module second_gen doesn't have a timescale but at least one module in design has a timescale.
@@ -29,26 +29,26 @@ WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv" Line 1. Module hour_gen doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/minute_gen.sv" Line 1. Module minute_gen doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/hour_gen.sv" Line 1. Module hour_gen doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=10) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_DEBOUNCER_DELAY=32'b01010,N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=32'b01010) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/T1_design1.sv" Line 2. Module T1_design1(N_DEBOUNCER_DELAY=32'b01010,N_INCREMENT_DELAY_CONTINUOUS=32'b0111110100) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/debouncer_FSM.sv" Line 1. Module PB_Debouncer_FSM(DELAY=32'b01010) doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/bcd.sv" Line 1. Module bcd doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 1. Module seven_seg_controller doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 52. Module binary_to_seven_seg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 1. Module seven_seg_controller(CLK_FREQUENCY=32'b01111101000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Magisterio/IPD-432/Tarea 1/code/Pregunta 4/code.srcs/sources_1/new/seven_seg_controller.sv" Line 57. Module binary_to_seven_seg doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.osc_1hz(CLK_FREQUENCY=32'b011111...
 Compiling module xil_defaultlib.second_gen
 Compiling module xil_defaultlib.minute_gen
 Compiling module xil_defaultlib.hour_gen
-Compiling module xil_defaultlib.PB_Debouncer_FSM(DELAY=10)
-Compiling module xil_defaultlib.T1_design1(N_INCREMENT_DELAY_CON...
+Compiling module xil_defaultlib.PB_Debouncer_FSM(DELAY=32'b01010...
+Compiling module xil_defaultlib.T1_design1(N_DEBOUNCER_DELAY=32'...
 Compiling module xil_defaultlib.bcd
 Compiling module xil_defaultlib.binary_to_seven_seg
-Compiling module xil_defaultlib.seven_seg_controller
+Compiling module xil_defaultlib.seven_seg_controller(CLK_FREQUEN...
 Compiling module xil_defaultlib.main(CLK_FREQUENCY=32'b011111010...
 Compiling module xil_defaultlib.alarm_testbench
 Compiling module xil_defaultlib.glbl

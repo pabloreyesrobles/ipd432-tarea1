@@ -1,4 +1,7 @@
 module seven_seg_controller
+#(parameter
+  CLK_FREQUENCY = 'd100_000_000
+)
 (
   input   logic         clk,
   input   logic         resetN,
@@ -14,6 +17,8 @@ module seven_seg_controller
   
   // assign cat_out = ~led_out;
   assign an_out = ~segment_state;
+  
+  localparam FRAME_CLK = (CLK_FREQUENCY >> 10) == 0 ? 1 : CLK_FREQUENCY >> 10;
   
   always_comb begin
     case(segment_state)
@@ -37,7 +42,7 @@ module seven_seg_controller
       segment_counter <= 32'b0;
     end 
     else begin
-      if (segment_counter == 32'd100_000) begin
+      if (segment_counter >= FRAME_CLK) begin
         segment_counter <= 32'd0;
         segment_state <= {segment_state[6:0], segment_state[7]};
       end 
