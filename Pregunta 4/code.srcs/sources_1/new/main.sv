@@ -115,7 +115,7 @@ module main
 
 
   always_ff @(posedge clk) begin
-    if (oversec) alarm_period <= 4'd5;
+    if (oversec | ~resetN) alarm_period <= 4'd5;
     alarm_ring <= (minutes == alarm_minutes) && (hours == alarm_hours) && (seconds < 'd5);
     
     seg_data[31:24] <= hours_bcd;
@@ -221,11 +221,5 @@ module main
     .cat_out(CAT),
     .an_out(AN)
   );
-  
-  always_ff @(posedge clk) begin
-    if (~resetN) begin
-      alarm_period <= 4'd5;
-    end
-  end
 
 endmodule
